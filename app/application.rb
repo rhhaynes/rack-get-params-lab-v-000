@@ -34,7 +34,7 @@ class Application
       search_term = req.params["q"]
       resp.write handle_search(search_term)
     else
-      resp.write "Path Not Found"
+      resp.write "Path Not Found\n"
     end
 
     resp.finish
@@ -42,9 +42,9 @@ class Application
 
   def handle_search(search_term)
     if @@items.include?(search_term)
-      return "#{search_term} is one of our items"
+      return "#{search_term} is one of our items\n"
     else
-      return "Couldn't find #{search_term}"
+      return "Couldn't find #{search_term}\n"
     end
   end
 end
